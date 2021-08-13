@@ -34,6 +34,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 //  DB를 세션 저장소로 활용
     compile('org.springframework.session:spring-session-jdbc')
+//  MariaDB jdbc
+    compile('org.mariadb.jdbc:mariadb-java-client')
 //  스프링 시큐리티 테스트를 위한 여러 도구를 지원
     testCompile('org.springframework.security:spring-security-test')
     testCompile('org.springframework.boot:spring-boot-starter-test')
