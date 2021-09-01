@@ -42,7 +42,7 @@ deploy:
     bucket: freelec-gihang-springboot-build #S3버킷
     key: intellij_springboot_webservice01.zip #빌드 파일을 압축해서 전달
     bundle_type: zip
-    application: intellij_springboot_webservice01
+    application: freelec-springboot2-webservice
     deployment_group: freelec-springboot2-webservice-group
     region: ap-northeast-2
     wait-until-deployes: true
