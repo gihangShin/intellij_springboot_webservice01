@@ -1,6 +1,5 @@
 package com.hang.book.springboot.config.auth;
 
-import com.hang.book.springboot.domain.user.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -20,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                     .authorizeRequests()    // URL 별 권한 관리를 설정하는 옵션의 시작점. (이게 선언되어야 antMatchers 옵션 사용 가능)
                     .antMatchers("/", "/css/*", "/images/**", "/js/**", "/h2-console/**").permitAll()   // 지정된 URL 들은 permitAll 옵션을 통해 전체 열람 권한
-                    .antMatchers("/api/v1/**").hasRole(Role.USER.name())    // antMatchers 권한 관리 대상을 지정하는 옵션 hasRole 옵션을 통해 USER 권한을 가진 사람만 열람 권한
+                    //.antMatchers("/api/v1/**").hasRole(Role.USER.name())    // antMatchers 권한 관리 대상을 지정하는 옵션 hasRole 옵션을 통해 USER 권한을 가진 사람만 열람 권한
                     .anyRequest().authenticated()   // 설정되지 않은 나머지 URL 의미 authenticated()을 추가하여 인증된 사용자들에게만 허용.
                 .and()
                     .logout()
