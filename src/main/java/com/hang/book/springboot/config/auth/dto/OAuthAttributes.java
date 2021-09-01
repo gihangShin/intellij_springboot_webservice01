@@ -55,7 +55,7 @@ public class OAuthAttributes {
     //    Naver
     public static OAuthAttributes ofNaver(String userNameAttributeName, Map<String, Object> attributes) {
         Map<String, Object> response = (Map<String, Object>) attributes.get("response");
-        System.out.println("OAuthAttribute[NAVER] : name = " + (String) attributes.get("name"));
+        System.out.println("OAuthAttribute[NAVER] : name = " + (String) response.get("name"));
         return OAuthAttributes.builder()
                 .name((String) response.get("name"))
                 .email((String) response.get("email"))
