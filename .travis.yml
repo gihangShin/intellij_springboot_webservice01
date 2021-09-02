@@ -30,9 +30,10 @@ deploy:
     bucket: freelec-gihang-springboot-build #S3버킷
     region: ap-northeast-2
     skip_cleanup: true
+    #skip_cleanup: true
     acl: private # zip 파일 접근을 private 로 설정
     local_dir: deploy #before deploy 에서 생성한 디랙토리
-    wait-until-deployed: true
+    wait_until_deployed: true
 
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
@@ -44,7 +45,7 @@ deploy:
     application: freelec-springboot2-webservice
     deployment_group: freelec-springboot2-webservice-group
     region: ap-northeast-2
-    wait-until-deployed: true
+    wait_until_deployed: true
 
 #CI 실행 완료시 메일로 알람
 notifications:
