@@ -17,7 +17,6 @@ cache:
 
 script: "./gradlew clean build"
 
-
 before_deploy:
   - zip -r intellij_springboot_webservice01 *
   - mkdir -p deploy
@@ -26,7 +25,7 @@ before_deploy:
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY #Travis repo setting 에 설정된 값
-    secret_access_key: $AWS_SECRET_KEY
+    secret_access_key: $AWS_SECRET_KEY #Travis repo setting 에 설정된 값
 
     bucket: freelec-gihang-springboot-build #S3버킷
     region: ap-northeast-2
@@ -45,7 +44,7 @@ deploy:
     application: freelec-springboot2-webservice
     deployment_group: freelec-springboot2-webservice-group
     region: ap-northeast-2
-    wait-until-deployes: true
+    wait-until-deployed: true
 
 #CI 실행 완료시 메일로 알람
 notifications:
