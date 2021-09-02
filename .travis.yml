@@ -29,13 +29,12 @@ deploy:
 
     bucket: freelec-gihang-springboot-build #S3버킷
     region: ap-northeast-2
-#    cleanup: false
-    skip_cleanup: true
-    #skip_cleanup: true
+    cleanup: false
+#    skip_cleanup: true
     acl: private # zip 파일 접근을 private 로 설정
     local_dir: deploy #before deploy 에서 생성한 디랙토리
     wait-until-deployed: true
-#
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
