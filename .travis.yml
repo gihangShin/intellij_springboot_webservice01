@@ -19,7 +19,7 @@ script: "./gradlew clean build"
 
 before_deploy:
   - zip -r intellij_springboot_webservice01 *
-#  - mkdir -p deploy
+  - mkdir -p deploy
   - mv intellij_springboot_webservice01.zip deploy/intellij_springboot_webservice01.zip
 
 deploy:
